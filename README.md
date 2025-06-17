@@ -12,7 +12,7 @@ Nous reproduisons ici leurs expériences afin de valider les performances et la 
 
 ### Évaluation Faithfulness : Insertion & Deletion
 
-![Texte alternatif](images/AUC_results.png)
+![Texte alternatif](AUC_results.png)
 
 **Conclusion :**  
 Les performances sont globalement similaires, mais notre version présente une variabilité plus élevée (écarts-types plus importants), probablement due à un échantillon réduit (4 images) contre 100 images dans le papier original.
@@ -22,7 +22,7 @@ Les performances sont globalement similaires, mais notre version présente une v
 **Protocole :**  
 6 participants (étudiants en IA) ont comparé les explications générées par notre EAC avec celles des méthodes de référence (extraits du papier).
 
-![Texte alternatif](images/Understanbility_results.png)
+![Texte alternatif](Understanbility_results.png)
 
 **Résultat :**  
 Sur les 4 images testées, EAC a systématiquement été préféré. Les autres méthodes n’ont pas montré d’avantage significatif.
