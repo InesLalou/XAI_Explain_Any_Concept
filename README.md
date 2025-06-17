@@ -1,43 +1,51 @@
 # XAI_Explain_Any_Concept
 
-Introduction
-Les DNNs sont puissants en vision par ordinateur mais restent opaques, ce qui limite leur usage dans des domaines sensibles. Pour rendre leurs décisions plus transparentes, l’Explainable AI (XAI) s’appuie souvent sur des explications pixel par pixel, peu fidèles et difficiles à comprendre.
+## Introduction
 
-Le papier original exploite le Segment Anything Model (SAM) pour extraire automatiquement des concepts visuels, et combine cela avec des valeurs de Shapley pour fournir des explications fidèles, compréhensibles et efficaces via leur pipeline Explain Any Concept (EAC).
+Les réseaux de neurones profonds (DNN) sont performants en vision par ordinateur mais restent opaques, ce qui limite leur utilisation dans des domaines sensibles. Pour rendre leurs décisions plus transparentes, l’Explainable AI (XAI) s’appuie souvent sur des explications au niveau des pixels, qui manquent de fidélité et sont difficiles à comprendre.
+
+Le papier original utilise le Segment Anything Model (SAM) pour extraire automatiquement des concepts visuels, combiné à une méthode basée sur les valeurs de Shapley pour fournir des explications fidèles, compréhensibles et efficaces via leur pipeline Explain Any Concept (EAC).
 
 Nous reproduisons ici leurs expériences afin de valider les performances et la qualité d’interprétation de cette méthode sur des jeux de données standards.
 
+## Résultats expérimentaux
 
+### Évaluation Faithfulness : Insertion & Deletion
 
-Résultats expérimentaux
-Évaluation Quantitative : Insertion & Deletion
-Méthode	Insertion ↑ (moy.)	Deletion ↓ (moy.)	Insertion (σ)	Deletion (σ)
-Notre EAC	81.31	20.88	25.46	15.80
-EAC (papier)	83.40	23.80	0.023	0.005
+![Texte alternatif](images/AUC_results.png)
 
-Conclusion : Performances globalement similaires, mais notre version présente une variabilité plus élevée (écarts-types), probablement due à un échantillon réduit (4 images) comparé aux 100 images du papier.
+**Conclusion :**  
+Les performances sont globalement similaires, mais notre version présente une variabilité plus élevée (écarts-types plus importants), probablement due à un échantillon réduit (4 images) contre 100 images dans le papier original.
 
-👁Évaluation Humaine : Compréhensibilité
-Protocole : 6 participants (étudiants en IA) ont comparé les explications générées par notre EAC avec celles des baselines (extraits du papier).
+### Évaluation humaine : Explicability
 
-Résultat :
+**Protocole :**  
+6 participants (étudiants en IA) ont comparé les explications générées par notre EAC avec celles des méthodes de référence (extraits du papier).
 
-Sur les 4 images testées, EAC a systématiquement été préféré.
+![Texte alternatif](images/Understanbility_results.png)
 
-Les autres méthodes n’ont pas montré d’avantage significatif.
+**Résultat :**  
+Sur les 4 images testées, EAC a systématiquement été préféré. Les autres méthodes n’ont pas montré d’avantage significatif.
 
-Interprétation : Indication encourageante que EAC produit des explications plus compréhensibles pour les humains.
+**Interprétation :**  
+Ces résultats indiquent que EAC produit des explications plus compréhensibles pour les humains.
 
-Étude d’ablation : Schéma PIE
-Comparaison de notre implémentation PIE vs. version originale et calcul direct des valeurs de Shapley.
+### Étude efficiency 
 
-Méthode	Temps / image
-Notre PIE	~10 minutes
-PIE (papier)	~4 minutes
-Shapley (direct)	>24 heures
+Comparaison entre notre implémentation PIE, la version originale et le calcul direct des valeurs de Shapley.
 
-Conclusion :
+| Méthode        | Temps par image |
+|----------------|-----------------|
+| Notre PIE      | ~10 minutes     |
+| PIE (papier)   | ~4 minutes      |
+| Shapley direct | >24 heures      |
 
-Notre implémentation est moins optimisée que celle du papier (possiblement à cause de hardware ou pipeline),
+**Conclusion :**  
+Notre implémentation est moins optimisée que celle du papier (probablement à cause du matériel ou du pipeline), mais reste largement plus scalable que le calcul exact.
 
-Mais reste largement plus scalable que le calcul exact.
+---
+
+## Equipe
+
+Candice Bouquin-Renoux, Lily Daganaud, Sarah Garcia, Dan Hayoun et Ines Lalou
+
