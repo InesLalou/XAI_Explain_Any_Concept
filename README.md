@@ -43,6 +43,8 @@ Comparaison entre notre implémentation PIE, la version originale et le calcul d
 **Conclusion :**  
 Notre implémentation est moins optimisée que celle du papier (probablement à cause du matériel ou du pipeline), mais reste largement plus scalable que le calcul exact.
 
+Pour plus de détail, vous pouvez voir notre rapport EAC_rapport !
+
 ---
 
 ## Equipe
