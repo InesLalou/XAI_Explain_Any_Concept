@@ -20,7 +20,7 @@ Les performances sont globalement similaires, mais notre version présente une v
 ### Évaluation humaine : Explicability
 
 **Protocole :**  
-6 participants (étudiants en IA) ont comparé les explications générées par notre EAC avec celles des méthodes de référence (extraits du papier) : DeepLIFT, GradSHAP, IntGrad, KernelSHAP, FeatAbl, LIME et GradSHAP*.
+6 participants (étudiants en IA) ont comparé les explications générées par notre EAC avec celles des méthodes de référence (extraites du papier) : DeepLIFT, GradSHAP, IntGrad, KernelSHAP, FeatAbl, LIME et GradSHAP*.
 
 ![Texte alternatif](Understanbility_results.png)
 
